@@ -12,7 +12,7 @@ There are two types of releases, depending on the origin of the change.
 
 ### Canary Releases
 
-Once a change is merged to the master branch of a Deis platform component, it initiates a
+When a change is merged to the master branch of a Deis platform component, it initiates a
 potential "canary" release. End-to-end tests begin from the `git` SHA of the change. That
 component is tested in integration with the other canary components. If e2e tests pass, the
 SHA is considered the new canary version for that component. If the tests fail, the canary
@@ -20,18 +20,12 @@ version for that component remains as before, and the development team is notifi
 integration failure.
 
 
-e2e tests run with that component
-based on its `git` commit SHA. The other components
-
-If a pull request against the deis/workflow component (for example) has passed testing and
-received two LGTM reviews from maintainers, it may be merged to master. Once it is merged, e2e
-tests are started based on the git commit SHA in the deis/workflow project. This is a potential
-"canary" release of the Deis platform.
-
-The deis/workflow:git-
-To set up e2e testing for a canary release, the definition of the
-
 ### Tagged Releases
+
+When a semantic-versioned tag is pushed to the master branch of a Deis platform component,
+it initiates a potential official release. End-to-end tests begin from the `git` tag. That
+component is tested in integration with the most recently passed tags for other components.
+If e2e tests pass, 
 
 If a semantic-versioned git tag is pushed to the deis/workflow component (for example), e2e
 tests are started based on that tag in the deis/workflow project. This is a potential external
@@ -39,6 +33,8 @@ release of the Deis platform.
 
 To set up e2e testing for a tagged release,
 
+
+## Example Release
 
 
 
